@@ -30,6 +30,12 @@ $botonSubmit.onclick = function mostrarInformacionUserYSaludar(){
     let userInfoArray = [$userName, $userSecondName, $userSurname, $userAge]
     let $resultado = document.querySelector('#resultado');
 
+    if ($placeholder.querySelectorAll("div").length > 0) {
+        while ($placeholder.firstChild) {
+          $placeholder.removeChild($placeholder.firstChild);
+        }
+    }
+
     for(let i = 0; i < userInfoArray.length; i++){
         let $element = document.createElement('div');
         $element.appendChild(document.createTextNode(userInfoArray[i].value));
